@@ -4,7 +4,7 @@ import Banner from '../components/page-components/Banner.vue'
 import PageText from '../components/page-components/PageText.vue'
 import PageGo from '../components/page-components/PageGo.vue'
 
-import works from '../assets/files/works.json'
+import works from '../../public/files/works.json'
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 
@@ -18,7 +18,7 @@ onMounted(() => {
 
 <template>
   <div class="page">
-    <Banner :image="`../../src/assets/images/works/${workItem.img}`" />
+    <Banner :image="`/images/works/${workItem.img}`" />
     <div class="mobile-page-info">
       <PageText sub="Works item" :title="workItem.title" />
       <PageGo currentPage="work-item" />

@@ -13,7 +13,7 @@ const writeArray = [
 
 <template>
   <div class="page">
-    <Banner image="../../src/assets/images/contact.jpg" />
+    <Banner image="/images/contact.jpg" />
     <div class="mobile-page-info">
       <PageText sub="CONTACT" title="Have a question? <br> Let's Get in Touch" />
       <PageGo currentPage="contact" />
@@ -29,12 +29,12 @@ const writeArray = [
           <div class="contact-blocks">
             <ContactBlock
               title="Call"
-              img="../src/assets/images/phone.svg"
+              img="/images/phone.svg"
               :blockArray="callArray"
             />
             <ContactBlock
               title="Write"
-              img="../src/assets/images/email.svg"
+              img="/images/email.svg"
               :blockArray="writeArray"
             />
           </div>

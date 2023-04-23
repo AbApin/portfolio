@@ -4,7 +4,7 @@
   <div class="sidebar">
     <div class="sidebar-header">
       <div class="sidebar-avatar">
-        <img src="../assets/images/profile.jpg" alt="Avatar" />
+        <img src="/images/profile.jpg" alt="Avatar" />
       </div>
       <p class="sidebar-name">Albert Apinyan</p>
       <p class="sidebar-profeccy">I`m a Front End Developer</p>

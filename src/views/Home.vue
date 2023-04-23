@@ -8,7 +8,7 @@ import HomePriceBlock from '../components/home/HomePriceBlock.vue'
 
 <template>
   <div class="page">
-    <Banner image="../../src/assets/images/home.jpg" />
+    <Banner image="/images/home.jpg" />
     <div class="mobile-page-info">
       <PageText sub="HI MY NEW FRIEND!" title="Discover my <br /> development space!" />
     </div>

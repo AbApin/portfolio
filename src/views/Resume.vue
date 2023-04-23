@@ -9,7 +9,7 @@ import SkilBlockContent from '../components/resume/SkilBlockContent.vue'
 
 <template>
   <div class="page">
-    <Banner image="../../src/assets/images/resume.jpg" />
+    <Banner image="/images/resume.jpg" />
     <div class="mobile-page-info">
       <PageText sub="RESUME" title="My Skills <br> and History" />
       <PageGo currentPage="resume" />

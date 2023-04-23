@@ -9,7 +9,7 @@ const navLinks = [
 ]
 
 const downloadPDF = async () => {
-  const pdfUrl = '../../src/assets/files/CV.pdf' // Replace with your PDF file URL
+  const pdfUrl = '/files/CV.pdf' // Replace with your PDF file URL
   const response = await fetch(pdfUrl)
   const blob = await response.blob()
   const link = document.createElement('a')

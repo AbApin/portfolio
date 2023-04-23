@@ -4,7 +4,7 @@ import Banner from '../components/page-components/Banner.vue'
 import PageText from '../components/page-components/PageText.vue'
 import PageGo from '../components/page-components/PageGo.vue'
 import { onMounted, ref, watch } from 'vue'
-import works from '../assets/files/works.json'
+import works from '../../public/files/works.json'
 
 const filterLinks = ['all', 'vue js', 'react js', 'html css', 'wordpress']
 const activeLink = ref('all')
@@ -20,7 +20,7 @@ watch(activeLink, (newValue) => {
 
 <template>
   <div class="page works">
-    <Banner image="../../src/assets/images/works.jpg" />
+    <Banner image="/images/works.jpg" />
     <div class="mobile-page-info">
       <PageText sub="Works" title="Recent work <br /> performed" />
       <PageGo currentPage="works" />
@@ -48,7 +48,7 @@ watch(activeLink, (newValue) => {
               <li class="works-block" v-for="work in worksArray" :key="work.id">
                 <router-link :to="`works/${work.id}`">
                   <div class="works-block-content">
-                    <img :src="`../../src/assets/images/works/${work.img}`" alt="work" />
+                    <img :src="`/images/works/${work.img}`" alt="work" />
                   </div>
                   <div class="works-block-desc">
                     <p class="works-block-title">{{ work.title }}</p>
@@ -197,7 +197,7 @@ watch(activeLink, (newValue) => {
     width: 48%;
   }
   .works-block {
-    width:100%;
+    width: 100%;
   }
 }
 </style>
