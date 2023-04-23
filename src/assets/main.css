@@ -1,0 +1,120 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: transparent;
+  font-family: 'Inter', sans-serif;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+@-webkit-keyframes scale-in-tr {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+    opacity: 1;
+  }
+}
+@keyframes scale-in-tr {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+    opacity: 1;
+  }
+}
+
+/* page */
+.page {
+  margin: 0 40px;
+  padding-bottom: 40px;
+}
+.page-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+  margin-top: -410px;
+  z-index: 8;
+}
+.page-inner {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.page-left {
+  width: 63%;
+  margin-left: auto;
+  padding-top: 30px;
+}
+.mobile-page-info {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .page {
+    margin: 0 20px;
+  }
+  .page-inner {
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .page {
+    margin: 0;
+  }
+  .page-inner {
+    flex-direction: column;
+  }
+  .page-left {
+    width: 100%;
+  }
+  .page-container {
+    margin-top: -100px;
+  }
+  .page-info {
+    display: none;
+  }
+  .mobile-page-info {
+    display: block;
+    position: absolute;
+    top: 150px;
+    width: 100%;
+    padding: 0 20px;
+    z-index: 8;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+}
+@media screen and (max-width: 767px) {
+  .page-left {
+    padding-top: 0;
+  }
+}
