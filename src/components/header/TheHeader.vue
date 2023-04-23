@@ -198,7 +198,7 @@ const linkClickHandler = () => {
     position: absolute;
     right: -300px;
     top: 0px;
-    height: 100vh;
+    height: calc(100vh - 20px);
     display: flex;
     flex-direction: column;
     background: #12492f;
