@@ -38,10 +38,14 @@ import HomePriceBlock from '../components/home/HomePriceBlock.vue'
   justify-content: space-between;
   margin-top: 30px;
 }
+
 @media screen and (max-width: 767px) {
   .home-price-blocks {
     flex-direction: column;
     row-gap: 30px;
+  }
+  .home-price{
+    margin-top: 30px;
   }
 }
 </style>

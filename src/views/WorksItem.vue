@@ -149,5 +149,8 @@ onMounted(() => {
   .work-item-info {
     margin-top: 30px;
   }
+  .work-item-link {
+    word-break: break-all;
+  }
 }
 </style>

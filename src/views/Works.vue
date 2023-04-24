@@ -9,13 +9,30 @@ import works from '../../public/files/works.json'
 const filterLinks = ['all', 'vue js', 'react js', 'html css', 'wordpress']
 const activeLink = ref('all')
 let worksArray = ref([])
+let showCount = ref(6)
 onMounted(() => {
   worksArray.value = works.filter((work) => work.category.includes(activeLink.value))
+  worksArray.value = shuffleArray(worksArray.value)
 })
 
 watch(activeLink, (newValue) => {
-  worksArray.value = works.filter((work) => work.category.includes(newValue.split('')[0]))
+  worksArray.value = works.filter((work) => work.category.includes(newValue.split(' ')[0]))
+  worksArray.value = shuffleArray(worksArray.value)
+  console.log(newValue.split(' ')[0])
 })
+
+const filterItemClickHandler = (link) => {
+  activeLink.value = link
+  showCount.value = 6
+}
+
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[array[i], array[j]] = [array[j], array[i]]
+  }
+  return array
+}
 </script>
 
 <template>
@@ -39,13 +56,18 @@ watch(activeLink, (newValue) => {
                 :class="['works-filter-item', { active: link === activeLink }]"
                 v-for="link in filterLinks"
                 :key="link"
-                @click="activeLink = link"
+                @click="filterItemClickHandler(link)"
               >
                 {{ link }}
               </li>
             </ul>
             <ul class="works-blocks">
-              <li class="works-block" v-for="work in worksArray" :key="work.id">
+              <li
+                class="works-block"
+                v-for="(work, index) in worksArray"
+                :key="work.id"
+                v-show="index < showCount"
+              >
                 <router-link :to="`works/${work.id}`">
                   <div class="works-block-content">
                     <img :src="`/images/works/${work.img}`" alt="work" />
@@ -59,6 +81,9 @@ watch(activeLink, (newValue) => {
                 </router-link>
               </li>
             </ul>
+            <button class="show-more" v-if="showCount < worksArray.length" @click="showCount += 6">
+              Show more
+            </button>
           </div>
         </div>
       </div>
@@ -67,6 +92,9 @@ watch(activeLink, (newValue) => {
 </template>
 
 <style scoped>
+.works-inner {
+  text-align: center;
+}
 .works-filter {
   display: flex;
   justify-content: space-between;
@@ -112,6 +140,7 @@ watch(activeLink, (newValue) => {
   height: auto;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 0 10px;
   transition: 0.4s ease-in-out;
 }
 .works-block-content {
@@ -169,6 +198,23 @@ watch(activeLink, (newValue) => {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.show-more {
+  display: inline-block;
+  font-weight: 900;
+  text-transform: capitalize;
+  background-color: #12492f;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+  padding: 20px 50px;
+  color: #fcfcfe;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 30px;
+}
+.show-more:hover {
+  background-color: #f56038;
 }
 @media screen and (max-width: 1024px) {
   .works-filter {
