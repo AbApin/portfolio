@@ -61,7 +61,7 @@ const shuffleArray = (array) => {
                 {{ link }}
               </li>
             </ul>
-            <ul class="works-blocks">
+            <TransitionGroup name="list" tag="ul" class="works-blocks">
               <li
                 class="works-block"
                 v-for="(work, index) in worksArray"
@@ -80,7 +80,7 @@ const shuffleArray = (array) => {
                   </div>
                 </router-link>
               </li>
-            </ul>
+            </TransitionGroup>
             <button class="show-more" v-if="showCount < worksArray.length" @click="showCount += 6">
               Show more
             </button>
@@ -141,7 +141,6 @@ const shuffleArray = (array) => {
   position: relative;
   overflow: hidden;
   box-shadow: 0 0 10px;
-  transition: 0.4s ease-in-out;
 }
 .works-block-content {
   position: relative;
@@ -215,6 +214,15 @@ const shuffleArray = (array) => {
 }
 .show-more:hover {
   background-color: #f56038;
+}
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s ease;
+}
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
 }
 @media screen and (max-width: 1024px) {
   .works-filter {
