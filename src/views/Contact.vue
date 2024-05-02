@@ -27,16 +27,8 @@ const writeArray = [
             <PageGo currentPage="contact" />
           </div>
           <div class="contact-blocks">
-            <ContactBlock
-              title="Call"
-              img="/images/phone.svg"
-              :blockArray="callArray"
-            />
-            <ContactBlock
-              title="Write"
-              img="/images/email.svg"
-              :blockArray="writeArray"
-            />
+            <ContactBlock title="Call" img="/images/phone.svg" :blockArray="callArray" />
+            <ContactBlock title="Write" img="/images/email.svg" :blockArray="writeArray" />
           </div>
         </div>
       </div>
